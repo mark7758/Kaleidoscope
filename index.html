@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kaleidoscope · 斗地主</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>🃏 Kaleidoscope 斗地主</h1>
+      <p class="subtitle">纯前端单机版 · 你 vs 两位 AI 玩家</p>
+    </div>
+    <button id="restart" class="btn ghost" type="button">重新开局</button>
+  </header>
+
+  <main class="table">
+    <div class="opp-row">
+      <section class="player left" id="panel-1">
+        <h2>玩家二 <span class="tag" id="role-1">农民</span></h2>
+        <div class="back-stack" id="backs-1"></div>
+        <p class="count">剩 <strong id="count-1">17</strong> 张</p>
+        <p class="move" id="move-1"></p>
+      </section>
+
+      <section class="center">
+        <div class="bottom-cards" id="bottom-cards" title="底牌"></div>
+        <p class="bottom-label">底牌</p>
+        <div class="last-play" id="last-play">等待叫地主…</div>
+      </section>
+
+      <section class="player right" id="panel-2">
+        <h2>玩家三 <span class="tag" id="role-2">农民</span></h2>
+        <div class="back-stack" id="backs-2"></div>
+        <p class="count">剩 <strong id="count-2">17</strong> 张</p>
+        <p class="move" id="move-2"></p>
+      </section>
+    </div>
+
+    <section class="self">
+      <div class="self-head">
+        <h2>你 <span class="tag" id="role-0">农民</span></h2>
+        <p class="count">剩 <strong id="count-0">17</strong> 张</p>
+      </div>
+      <div class="hand" id="hand"></div>
+      <div class="controls">
+        <div id="bid-controls" class="control-group">
+          <button id="bid" class="btn primary" type="button">叫地主</button>
+          <button id="pass-bid" class="btn" type="button">不叫</button>
+        </div>
+        <div id="play-controls" class="control-group hidden">
+          <button id="play" class="btn primary" type="button">出牌</button>
+          <button id="pass" class="btn" type="button">不出</button>
+          <button id="hint" class="btn" type="button">提示</button>
+          <button id="clear" class="btn ghost" type="button">取消选择</button>
+        </div>
+        <span id="status" class="status">发牌完成，轮到你叫地主</span>
+      </div>
+    </section>
+
+    <section class="log-box">
+      <h3>对局记录</h3>
+      <ul id="log"></ul>
+    </section>
+  </main>
+
+  <script src="doudizhu-core.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
